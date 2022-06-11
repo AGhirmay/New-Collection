@@ -4520,6 +4520,189 @@
                 }
             ],
             "description": "# Account Login 1\n\n> **This Route is for account login and profile access. There are different check up and scenarios. The following test are being done here:**\n\n*   **Successful Login of account**\n*   **Proper view of Account Profile**\n    *   View Profile with Invalid Token\n    *   View Profile with Empty Token\n*   **Update Account Profile**\n    *   Trying to update profile with empty FirstName\n    *   Trying to update profile with empty LastName\n    *   Trying to update profile with empty Date of Birth\n    *   Trying to update profile with empty Gender\n    *   Trying to update profile with empty Token\n    *   Trying to update profile with invalid Token"
+        },
+        {
+            "name": "Update my Pro LN Empty",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test(\"Status code is 400\", function () {\r",
+                            "    pm.response.to.have.status(400);\r",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "description": "(Required) User",
+                        "key": "x-auth-token",
+                        "value": "{{tokenPU}}"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "{{url}}/user/me",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "user",
+                        "me"
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "name": "Update my Pro LN Empty",
+                    "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "description": "(Required) User",
+                                "key": "x-auth-token",
+                                "value": "{{tokenPU}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\n    \"lastName\": \"\"\n    \n}"
+                        },
+                        "url": {
+                            "raw": "{{url}}/user/me",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user",
+                                "me"
+                            ]
+                        }
+                    },
+                    "status": "Bad Request",
+                    "code": 400,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json; charset=utf-8"
+                        },
+                        {
+                            "key": "Content-Length",
+                            "value": "114"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "keep-alive"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Wed, 11 May 2022 21:21:03 GMT"
+                        },
+                        {
+                            "key": "x-amzn-RequestId",
+                            "value": "ac32bbd7-f939-4bd1-ae46-87e5116525df"
+                        },
+                        {
+                            "key": "x-dns-prefetch-control",
+                            "value": "off"
+                        },
+                        {
+                            "key": "x-xss-protection",
+                            "value": "1; mode=block"
+                        },
+                        {
+                            "key": "access-control-allow-origin",
+                            "value": "*"
+                        },
+                        {
+                            "key": "strict-transport-security",
+                            "value": "max-age=15552000; includeSubDomains"
+                        },
+                        {
+                            "key": "x-frame-options",
+                            "value": "SAMEORIGIN"
+                        },
+                        {
+                            "key": "access-control-allow-headers",
+                            "value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+                        },
+                        {
+                            "key": "x-amzn-Remapped-content-length",
+                            "value": "114"
+                        },
+                        {
+                            "key": "x-download-options",
+                            "value": "noopen"
+                        },
+                        {
+                            "key": "x-amz-apigw-id",
+                            "value": "R-tN9HRTIAMF8Pw="
+                        },
+                        {
+                            "key": "vary",
+                            "value": "Accept-Encoding"
+                        },
+                        {
+                            "key": "x-content-type-options",
+                            "value": "nosniff"
+                        },
+                        {
+                            "key": "etag",
+                            "value": "W/\"72-KPWVRylreaduKP6y0hA4nexZUFE\""
+                        },
+                        {
+                            "key": "access-control-allow-methods",
+                            "value": "PUT,GET,POST,DELETE"
+                        },
+                        {
+                            "key": "access-control-expose-headers",
+                            "value": "x-auth-token,x-refresh-token,x-info-token"
+                        },
+                        {
+                            "key": "X-Amzn-Trace-Id",
+                            "value": "Root=1-627c28bf-36d7ad356e68785067eedd0a;Sampled=0"
+                        },
+                        {
+                            "key": "X-Cache",
+                            "value": "Error from cloudfront"
+                        },
+                        {
+                            "key": "Via",
+                            "value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+                        },
+                        {
+                            "key": "X-Amz-Cf-Pop",
+                            "value": "CDG52-P2"
+                        },
+                        {
+                            "key": "X-Amz-Cf-Id",
+                            "value": "OElJVsHD8dOCMw6n9qb_vAm4KyEhCedg2GvczLEiYkzp93UJPOeEMQ=="
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"lastName\\\" is not allowed to be empty\"\n}"
+                }
+            ]
         }
     ]
 }
