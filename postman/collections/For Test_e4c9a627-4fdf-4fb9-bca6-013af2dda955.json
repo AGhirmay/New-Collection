@@ -1,0 +1,4485 @@
+{
+	"info": {
+		"_postman_id": "e68eaa70-0d12-47b9-9b15-bd9b86e1f046",
+		"name": "For Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "me Copy",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "LoginHappypath",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5bbcd35d-dcbc-4504-855a-16a014d4ba9c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.environment.set(\"tokenPU\",pm.response.headers.get(\"x-auth-token\"));\r",
+											"pm.environment.set(\"RefreshTokenPU\",pm.response.headers.get(\"x-refresh-token\"));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "039ef167-6d61-445b-af36-b4ab39212af1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "abcd",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"public_user@kabbee.org\",\r\n    \"password\":\"aron@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "69b62726-7887-4fa5-92a9-ce5b1985df40",
+									"name": "Happy Path",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "abcd",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"public_user@kabbee.org\",\r\n    \"password\":\"aron@123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "579"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:22:12 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "8d9dcfe8-2b22-49da-8f4a-9a9e8bbe5371"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-auth-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDgwMGI5M2IyOGExNWIxMTgxOWMiLCJmaXJzdE5hbWUiOiJQdWJsaWMiLCJtaWRkbGVOYW1lIjoiQXJvbiIsImxhc3ROYW1lIjoiVXNlciIsImVtYWlsIjoicHVibGljX3VzZXJAa2FiYmVlLm9yZyIsInJvbGVzIjpbXSwidG9rZW5FeHBpcnkiOjE2NTIzMTAxMzI3OTEsImNvdW50cnkiOiJDYW5hZGEiLCJpYXQiOjE2NTIzMDQxMzJ9.jomTlptmMj8kura5Z-CGw4yHb7CJARngYBUYpsqG4fI"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "579"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-info-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDgwMGI5M2IyOGExNWIxMTgxOWMiLCJmaXJzdE5hbWUiOiJQdWJsaWMiLCJtaWRkbGVOYW1lIjoiQXJvbiIsImxhc3ROYW1lIjoiVXNlciIsImVtYWlsIjoicHVibGljX3VzZXJAa2FiYmVlLm9yZyIsInJvbGVzIjpbXSwidG9rZW5FeHBpcnkiOjE2NTIzMDI5MjI3OTQsImlhdCI6MTY1MjMwNDEzMn0.Mj8skkFp-KqapMm0jthvAYFrgOeIXGQ7DM1E5Lg_BCo"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tX4Fd7IAMFhyw="
+										},
+										{
+											"key": "x-refresh-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDgwMGI5M2IyOGExNWIxMTgxOWMiLCJmaXJzdE5hbWUiOiJQdWJsaWMiLCJtaWRkbGVOYW1lIjoiQXJvbiIsImxhc3ROYW1lIjoiVXNlciIsImVtYWlsIjoicHVibGljX3VzZXJAa2FiYmVlLm9yZyIsInJvbGVzIjpbXSwidG9rZW5FeHBpcnkiOjE2NTIzMDQ0MzI3OTMsImlhdCI6MTY1MjMwNDEzMn0.-wRt6KkloU4ujHsNmghmrMd21pyQaCZgct_wDyQOq-c"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"243-DBU3A60jJhr7reEVHJiedXVSi1I\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c28ff-3d55a01c3aba84974ceca887;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Miss from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "JyaUcf33MW9bshWEVdfJij75fvRWvn9I7_t8695oxh5b9rGaG2VT0A=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Login Success\",\n    \"detail\": {\n        \"_id\": \"62740800b93b28a15b11819c\",\n        \"firstName\": \"Public\",\n        \"middleName\": \"Aron\",\n        \"lastName\": \"User\",\n        \"dob\": \"2010-01-01\",\n        \"gender\": \"MALE\",\n        \"address\": {\n            \"country\": \"Canada\",\n            \"_id\": \"62740800b93b28a15b11819e\"\n        },\n        \"favourites\": [],\n        \"subscriptionIds\": [],\n        \"userPreference\": {\n            \"language\": \"English\",\n            \"theme\": \"dark\",\n            \"_id\": \"62740800b93b28a15b11819f\"\n        },\n        \"actions\": [],\n        \"activeDevices\": [\n            {\n                \"deviceId\": \"abcd\",\n                \"expiryDate\": \"2022-05-11T23:02:12.743Z\",\n                \"_id\": \"627c2904eb38936a61171b9c\"\n            }\n        ],\n        \"playlists\": [],\n        \"updatedAt\": \"2022-05-11T21:22:12.782Z\",\n        \"__v\": 13,\n        \"profilePic\": null,\n        \"wallpaperPic\": null\n    }\n}"
+								},
+								{
+									"id": "4c95eb43-4454-4430-a8b8-420d670bab1e",
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "skaf",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"\",\r\n    \"password\":\"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "102"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:23:18 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "966459e9-25e0-4c36-a430-74241f8e490e"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "102"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tjCHCJIAMFseQ="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"66-rM+sEILuOuelHp52yiuPIULN+Go\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c2946-6fdf928a5c6125bd78c94cbf;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "HjONg5dUckVWPunKEdlObpfQISvmtktfJ4US5ROhcaBriOyPdblrFA=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Email validation Error\",\n    \"messageCode\": 527,\n    \"detail\": \"\\\"value\\\" is not allowed to be empty\"\n}"
+								}
+							]
+						},
+						{
+							"name": "LoginHappypath emailEmpty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d49886c5-aafd-4f17-9919-f8a55b6983d8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.environment.set(\"token\",pm.response.headers.get(\"x-auth-token\"));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "9db55cca-a4e3-4a9e-b37a-bd2ee514cc0b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "skaf",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7813a70b-9a6e-441b-81c2-dd400017a06d",
+									"name": "LoginHappypath emailEmpty",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "skaf",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"\",\r\n    \"password\":\"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "102"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:23:18 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "966459e9-25e0-4c36-a430-74241f8e490e"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "102"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tjCHCJIAMFseQ="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"66-rM+sEILuOuelHp52yiuPIULN+Go\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c2946-6fdf928a5c6125bd78c94cbf;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "HjONg5dUckVWPunKEdlObpfQISvmtktfJ4US5ROhcaBriOyPdblrFA=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Email validation Error\",\n    \"messageCode\": 527,\n    \"detail\": \"\\\"value\\\" is not allowed to be empty\"\n}"
+								}
+							]
+						},
+						{
+							"name": "LoginHappypath wznoEmail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4fc94d90-568c-47f6-aeba-33284943930f",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.environment.set(\"token\",pm.response.headers.get(\"x-auth-token\"));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f4367901-3b90-49d4-9ed6-a9eda0d3fbc0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "skaf",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "41e5410e-f724-48f9-b63c-6204298d25aa",
+									"name": "LoginHappypath wznoEmail",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "skaf",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n    \"password\":\"123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "87"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:23:45 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "099a09bd-e6ad-4788-9aa5-cd038ca8e22e"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "87"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tnOF1-IAMFsRw="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"57-++zZCBRrvP61D6j4koFct8cDfJw\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c2961-618ab07433d694b721a78247;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "K4zxbmrwuYwIGK-j6cqS2fpfMMeRFURkvICuEwj3DcqOX9ZSLg79vA=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Email validation Error\",\n    \"messageCode\": 527,\n    \"detail\": \"\\\"value\\\" is required\"\n}"
+								}
+							]
+						},
+						{
+							"name": "LoginInvalid email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"id": "a837f7c5-298c-49ff-acb5-58c5f4d5f5c7"
+									}
+								}
+							],
+							"id": "6cd342f4-407f-43a3-8567-c5f567c189e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"aghirma.org\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4ae272ec-e912-4b5b-9806-8a6183fb4570",
+									"name": "LoginInvalid email",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"aghirma.org\",\r\n    \"password\":\"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "97"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:24:02 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "9d901ce7-b2b1-4658-94e3-0dd5061adeb5"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "97"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tp7GYzoAMFfbQ="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"61-mZALMBfeH2ceN1dbeudMhzE3BZw\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c2972-2354703a7cb589835e4970d6;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "sbtwc6XUlL78hVV7B8oNaBYXgDi5FU0XBeIoqOR-9gcsYG8i92mZqA=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Email validation Error\",\n    \"messageCode\": 527,\n    \"detail\": \"\\\"value\\\" must be a valid email\"\n}"
+								}
+							]
+						},
+						{
+							"name": "LoginNon Registered email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3dc6c0fa-ca68-41a0-8a96-e35b49d3bcba",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "fe331f57-ff22-4aa8-960b-a772f6ef8ea8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"aghirma@kabbee.org\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d0c6eb60-f236-4333-bd6f-079d87429ff3",
+									"name": "LoginNon Registered email",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"aghirma@kabbee.org\",\r\n    \"password\":\"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "74"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:24:32 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "cab86cc9-fad8-4c43-aeaf-511af87c36ef"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "74"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tuhE-5oAMFVTg="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"4a-4PeQO32EqUB3l+DZYEoCzUDditQ\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c298f-5ca45a796d0fe88c3e68a93c;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "-wOMyYGgRI8zWlI3Uh0oGzK4qEAjEyF0X2mXoY9Q5VnOBkpIeDKBJw=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid e-mail and/or password\",\n    \"messageCode\": 108,\n    \"detail\": \"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login with noPassword",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "17d008eb-6fab-49da-92b5-f21f2e51cfdd",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "39958e6e-4dd2-4830-9404-da2f80fc7171",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a7174109-1adb-4e48-83d4-252db7485beb",
+									"name": "Login with noPassword",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "93"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:25:01 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "8b7f2686-8841-40d3-99f4-e44a8ef075b1"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "93"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-tzJGKNoAMF6Sg="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"5d-prK6+WbWG764FsPvbVTgMjGKvcs\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c29ad-253cb60609f44e9d3f1744b7;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "uqzwMmFqGJby8m1w8Mt4n_QyWbZU04DwvNaJlF6eYlEQ1n9TaDJvpQ=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Password Should not be empty\",\n    \"messageCode\": 528,\n    \"detail\": \"\\\"value\\\" is required\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login with wrong password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "96585d1c-ca36-4d61-966f-0558f22d2e22",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8e1b0cdc-4328-4ea3-b3ec-315e9f74cd67",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4e8ae804-3eb0-4aa9-8270-4c4eb6655425",
+									"name": "Login with wrong password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "74"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:25:20 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "bf52b7e2-8f4d-49d7-ac9e-60d96a5a37ca"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "74"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-t2CFZpIAMFeKw="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"4a-4PeQO32EqUB3l+DZYEoCzUDditQ\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c29c0-1f7505442ce3cf2256c39c99;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "3tiJ6IJ4idcj_pLg1ikDT0uEP-dJiTrfc0Rcc6iKFU0RaDhHz_ztpQ=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid e-mail and/or password\",\n    \"messageCode\": 108,\n    \"detail\": \"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login with passwordEmpty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58bd8a4f-5185-40f8-bf67-a1d88c6b0ea8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "6caa90d8-4d87-45ba-9aad-231a4b976a2f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c3fe6a49-1f14-4293-a3ad-80757afc376a",
+									"name": "Login with passwordEmpty",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "108"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:25:34 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "6b0d8a20-fa5a-48c6-945e-a867fdb5a1ec"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "108"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-t4PH3cIAMFmfg="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"6c-J+0p8kmWcpaWwtx+rUfX1FzNsr0\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c29ce-55bc62471e35195926c85729;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "_4Bl2Gj6QQeBHMj36AUoe_WOqbdZcTTGByZLwxG6DX4XYgDa8yv90w=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Password Should not be empty\",\n    \"messageCode\": 528,\n    \"detail\": \"\\\"value\\\" is not allowed to be empty\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login with passwordSpace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "65bda22f-f62d-404a-a5bf-95c6c5de68b4",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "a4149d37-3cb1-4724-8e80-d628558e9cf1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-id",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"      \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e2e10983-ed66-48c5-86a8-7b9476e89296",
+									"name": "Login with passwordSpace",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-id",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"      \"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "74"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:25:52 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "19ceee38-4935-41a8-85fb-12ccb51df370"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "74"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-t7GFvUIAMFaxA="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"4a-4PeQO32EqUB3l+DZYEoCzUDditQ\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c29e0-4224ea1c114546e1660a715a;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "1ECxVCJKVVQwecVCZ_7wE60AgMNryxB7GEscQQUFGe9ccnnfX3P7jw=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid e-mail and/or password\",\n    \"messageCode\": 108,\n    \"detail\": \"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login with password<8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0c4647af-5f7f-4541-8442-bec21bd68837",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "b0a320f1-581e-4550-aebe-2688fb55d2f0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-Id",
+										"value": "12",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"1235\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f85227b5-5db6-4972-8634-a3792a4594b3",
+									"name": "Login with password<8",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-device-Id",
+												"value": "12",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"luluoquare@gmail.com\",\r\n    \"password\":\"1235\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/auth",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "74"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 May 2022 21:26:09 GMT"
+										},
+										{
+											"key": "x-amzn-RequestId",
+											"value": "09e76e7c-51c4-4e34-a992-bec2962a4e6b"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "access-control-allow-headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+										},
+										{
+											"key": "x-amzn-Remapped-content-length",
+											"value": "74"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-amz-apigw-id",
+											"value": "R-t9wFPGIAMF6ew="
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"4a-4PeQO32EqUB3l+DZYEoCzUDditQ\""
+										},
+										{
+											"key": "access-control-allow-methods",
+											"value": "PUT,GET,POST,DELETE"
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "x-auth-token,x-refresh-token,x-info-token"
+										},
+										{
+											"key": "X-Amzn-Trace-Id",
+											"value": "Root=1-627c29f1-05a423f40d1e816b43e4435d;Sampled=0"
+										},
+										{
+											"key": "X-Cache",
+											"value": "Error from cloudfront"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+										},
+										{
+											"key": "X-Amz-Cf-Pop",
+											"value": "CDG52-P2"
+										},
+										{
+											"key": "X-Amz-Cf-Id",
+											"value": "5L9dyYPBzzKZ5zdO7fFlYnqMAzK6-QNK7cF7-6YIAd_EGnpdPLveYQ=="
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid e-mail and/or password\",\n    \"messageCode\": 108,\n    \"detail\": \"\"\n}"
+								}
+							]
+						}
+					],
+					"id": "2465b89c-7e96-49a3-b9eb-5a27b65fb234",
+					"description": "# Login Process\n\n> **This Route is for login into account. The following test are being done here:**\n\n*   **Successful Login into account**"
+				},
+				{
+					"name": "LoginHappypath",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "73fad438-b5d6-4686-841d-c14c6510fac3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.environment.set(\"tokenPU\",pm.response.headers.get(\"x-auth-token\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "68c54f53-397c-443b-8794-6b05f831e342",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-device-Id",
+								"value": "123",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"public_user@gmail.com\",\r\n    \"password\":\"aron@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						},
+						"description": "# ***This Login Path is working***"
+					},
+					"response": [
+						{
+							"id": "3c79e03e-b1e7-41fd-ada6-2bfe21d73186",
+							"name": "LoginHappypath",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-device-Id",
+										"value": "123",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"public_user@gmail.com\",\r\n    \"password\":\"aron@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "527"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:10:49 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "1d9ede46-c6cc-4b87-bcab-666d814b98ff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDUwOGZiZTQzMTJmOWZkZWQ1MzUiLCJmaXJzdE5hbWUiOiJBd2V0IiwibWlkZGxlTmFtZSI6IkFyb24iLCJsYXN0TmFtZSI6IkdoaXJtYWkiLCJlbWFpbCI6InB1YmxpY191c2VyQGdtYWlsLmNvbSIsInJvbGVzIjpbIlBVQkxJQ19VU0VSIl0sInRva2VuRXhwaXJ5IjoxNjUyMzA5NDQ4OTg3LCJjb3VudHJ5IjoiQ2FuYWRhIiwiaXNQdWJsaWNVc2VyRW5hYmxlZCI6dHJ1ZSwiaWF0IjoxNjUyMzAzNDQ4fQ._gx5zjdM2nKX70fAI-etQ_jwMDvHDDdiudJE2Pjc0yc"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-info-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDUwOGZiZTQzMTJmOWZkZWQ1MzUiLCJmaXJzdE5hbWUiOiJBd2V0IiwibWlkZGxlTmFtZSI6IkFyb24iLCJsYXN0TmFtZSI6IkdoaXJtYWkiLCJlbWFpbCI6InB1YmxpY191c2VyQGdtYWlsLmNvbSIsInJvbGVzIjpbIlBVQkxJQ19VU0VSIl0sInRva2VuRXhwaXJ5IjoxNjUyMzAyOTEwOTk1LCJpYXQiOjE2NTIzMDM0NDh9.eZkh-WKuvGfWvGqnAnW2zFvb4Td6WWy7rg2rGIRfTvg"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-rtOG-jIAMFQUA="
+								},
+								{
+									"key": "x-refresh-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MDUwOGZiZTQzMTJmOWZkZWQ1MzUiLCJmaXJzdE5hbWUiOiJBd2V0IiwibWlkZGxlTmFtZSI6IkFyb24iLCJsYXN0TmFtZSI6IkdoaXJtYWkiLCJlbWFpbCI6InB1YmxpY191c2VyQGdtYWlsLmNvbSIsInJvbGVzIjpbIlBVQkxJQ19VU0VSIl0sInRva2VuRXhwaXJ5IjoxNjUyMzAzNzQ4OTkyLCJpYXQiOjE2NTIzMDM0NDh9.RR-Ao1BSSauc5aWFcw6cdTz116ZzNjIHrAIx6fstrf0"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"488-tWtvaktvqgL1ChDJxawftJEVCrQ\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2654-759cb92f08611a8f5483dd2a;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "m_7yzPWTJYsuWKoCMJo5kxbcMeXCHzsLpbK767SeGdophNbztvbjew=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Login Success\",\n    \"detail\": {\n        \"_id\": \"62740508fbe4312f9fded535\",\n        \"firstName\": \"Awet\",\n        \"middleName\": \"Aron\",\n        \"lastName\": \"Ghirmai\",\n        \"dob\": \"2010-01-01\",\n        \"gender\": \"MALE\",\n        \"address\": {\n            \"country\": \"Canada\",\n            \"_id\": \"62740508fbe4312f9fded537\"\n        },\n        \"favourites\": [],\n        \"subscriptionIds\": [],\n        \"userPreference\": {\n            \"language\": \"ትግርኛ\",\n            \"theme\": \"dark\",\n            \"_id\": \"62740508fbe4312f9fded538\"\n        },\n        \"actions\": [],\n        \"activeDevices\": [\n            {\n                \"deviceId\": \"123\",\n                \"expiryDate\": \"2022-05-11T22:50:48.930Z\",\n                \"_id\": \"627c265834d727aabfe77a09\"\n            }\n        ],\n        \"playlists\": [\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627412ffec8e5c3e922bf30c\",\n                \"_id\": \"62741300ec8e5c3e922bf30e\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627431e0af1f4cbc43ae0be2\",\n                \"_id\": \"627431e0af1f4cbc43ae0be4\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"6274368c4f3681ad2979857b\",\n                \"_id\": \"6274368c4f3681ad2979857d\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"62743a1f90631c28ecabe36e\",\n                \"_id\": \"62743a1f90631c28ecabe370\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627492dec53d6dc17719835e\",\n                \"_id\": \"627492dec53d6dc177198360\"\n            }\n        ],\n        \"updatedAt\": \"2022-05-11T21:10:48.979Z\",\n        \"__v\": 33,\n        \"isPublicUserEnabled\": true,\n        \"profilePic\": null,\n        \"wallpaperPic\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View my Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97deb38f-9953-4753-a7dc-345e954293f8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "31c1345f-a173-4328-ba3f-acc755345d3c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6048089e-83d5-4737-afcd-b4427a761c3b",
+							"name": "Happy Path",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "558"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:11:44 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "cea5c21e-19a9-41d5-ae4f-b81b8846cd8e"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-r2hHDAoAMF_1g="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4cf-2Sfgrs1UpWFjK6ALpjN/qIKyDyA\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c268f-0e7888681d3b6c1d2ef73efc;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "DMWP6m7egFamndA-EU_-uFYC9agvERcGyJOswxzumfC6qHxyUGYu2Q=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Successfully Requested\",\n    \"detail\": {\n        \"_id\": \"62740508fbe4312f9fded535\",\n        \"firstName\": \"Awet\",\n        \"middleName\": \"Aron\",\n        \"lastName\": \"Ghirmai\",\n        \"dob\": \"2010-01-01\",\n        \"gender\": \"MALE\",\n        \"login\": {\n            \"email\": \"public_user@gmail.com\",\n            \"roles\": [\n                \"PUBLIC_USER\"\n            ],\n            \"_id\": \"62740508fbe4312f9fded536\",\n            \"isActive\": true,\n            \"isVerified\": true\n        },\n        \"address\": {\n            \"country\": \"Canada\",\n            \"_id\": \"62740508fbe4312f9fded537\"\n        },\n        \"favourites\": [],\n        \"subscriptionIds\": [],\n        \"userPreference\": {\n            \"language\": \"ትግርኛ\",\n            \"theme\": \"dark\",\n            \"_id\": \"62740508fbe4312f9fded538\"\n        },\n        \"actions\": [],\n        \"playlists\": [\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627412ffec8e5c3e922bf30c\",\n                \"_id\": \"62741300ec8e5c3e922bf30e\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627431e0af1f4cbc43ae0be2\",\n                \"_id\": \"627431e0af1f4cbc43ae0be4\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"6274368c4f3681ad2979857b\",\n                \"_id\": \"6274368c4f3681ad2979857d\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"62743a1f90631c28ecabe36e\",\n                \"_id\": \"62743a1f90631c28ecabe370\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627492dec53d6dc17719835e\",\n                \"_id\": \"627492dec53d6dc177198360\"\n            }\n        ],\n        \"createdAt\": \"2022-05-05T17:10:33.241Z\",\n        \"updatedAt\": \"2022-05-11T21:10:48.979Z\",\n        \"__v\": 33,\n        \"isPublicUserEnabled\": true,\n        \"profilePic\": null,\n        \"wallpaperPic\": null\n    }\n}"
+						},
+						{
+							"id": "f66b6062-96b8-4524-8ecf-01f504fa1f95",
+							"name": "Forbidden Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NzRjZTZlMC00Y2YzLTExZWItYjFmNC1kYjcxMDlkYmFkMDAiLCJmaXJzdE5hbWUiOiJCZXJlIiwibWlkZGxlTmFt"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:12:25 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "458bb416-b7b0-4ec5-a4f9-04d8f899038a"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "71"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-r9DFiaoAMFxTg="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"47-5g3X3Zt8eb2beYTRMzdYalrMgzY\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c26b9-51da82d1129f200f529e83e0;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "94qo1r--os0p3O-jSe9IFKbQz_B6Q3mpbtQpxCYdrypwZ0Z6ZPBH4Q=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Invalid Token\",\n    \"messageCode\": 1102,\n    \"detail\": \"Invalid Token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "View my Profile (Invalid Token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "cf182ce7-bf22-4833-805a-eb5cb0b87414"
+							}
+						}
+					],
+					"id": "19a35cbf-94f2-400b-a060-3a24891f0538",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NzRjZTZlMC00Y2YzLTExZWItYjFmNC1kYjcxMDlkYmFkMDAiLCJmaXJzdE5hbWUiOiJCZXJlIiwibWlkZGxlTmFt"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d723dba3-965a-4f2e-9051-855b90f45a1e",
+							"name": "View my Profile (Invalid Token)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4NzRjZTZlMC00Y2YzLTExZWItYjFmNC1kYjcxMDlkYmFkMDAiLCJmaXJzdE5hbWUiOiJCZXJlIiwibWlkZGxlTmFt"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:12:25 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "458bb416-b7b0-4ec5-a4f9-04d8f899038a"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "71"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-r9DFiaoAMFxTg="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"47-5g3X3Zt8eb2beYTRMzdYalrMgzY\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c26b9-51da82d1129f200f529e83e0;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "94qo1r--os0p3O-jSe9IFKbQz_B6Q3mpbtQpxCYdrypwZ0Z6ZPBH4Q=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Invalid Token\",\n    \"messageCode\": 1102,\n    \"detail\": \"Invalid Token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "View my Profile (empty Token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "f59451ef-2225-49bf-ac80-5b3128d8389c"
+							}
+						}
+					],
+					"id": "47586b95-53d2-4426-9fd9-a014b6ec43c8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5a0fdf10-5995-43a8-a073-80f61a561154",
+							"name": "View my Profile (empty Token)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:14:13 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "31eacb28-876d-4613-81a3-fa17ae2669c5"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "76"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-sNhExtoAMFuOw="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c-ZsWzJZLCrwCnFCKZZFyT+meSDqU\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2723-537a82d903badd9b641370d5;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "UAtO9okf29WTfU0X2rihF0OjIH9wi9yNNZhZeQVf_gpgqOr7iimtcQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Access Denied\",\n    \"messageCode\": 1101,\n    \"detail\": \"No token provided.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3a46292f-0192-49c5-9157-dfaab6e6bf72",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1ed18350-fdd6-464f-8aad-42cf2d994cd4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmai\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "dcbeb7a2-8297-4b5c-aeab-b719e80d5c89",
+							"name": "Happy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmai\"\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "711"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:15:30 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "d6a6e4f1-41ad-43d7-bc10-15a0ceea37c3"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-sZzGK_IAMFyoQ="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5ac-IeN03EKBpXn1KzxG3khF7AFhwZA\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2771-3025e690722d7561517bd75f;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "bJHysqldAuKcJxnuWMGt8VKGJfKQ1Sx67vBEjhNYDLdXJpyOdvirfg=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Successfully Updated\",\n    \"detail\": {\n        \"_id\": \"62740508fbe4312f9fded535\",\n        \"firstName\": \"Awet\",\n        \"middleName\": \"Aron\",\n        \"lastName\": \"Ghirmai\",\n        \"dob\": \"2010-01-01\",\n        \"gender\": \"MALE\",\n        \"login\": {\n            \"email\": \"public_user@gmail.com\",\n            \"password\": \"$2a$10$sfZvtYuiUnEpja6Ln/R94u0dSeCA65CKoRKNC4k3ar0TCLyOwLDgq\",\n            \"roles\": [\n                \"PUBLIC_USER\"\n            ],\n            \"_id\": \"62740508fbe4312f9fded536\",\n            \"isActive\": true,\n            \"isVerified\": true\n        },\n        \"address\": {\n            \"country\": \"Canada\",\n            \"_id\": \"62740508fbe4312f9fded537\"\n        },\n        \"favourites\": [],\n        \"subscriptionIds\": [],\n        \"userPreference\": {\n            \"language\": \"ትግርኛ\",\n            \"theme\": \"dark\",\n            \"_id\": \"62740508fbe4312f9fded538\"\n        },\n        \"viewHistory\": [\n            {\n                \"contentId\": \"61f0f79f3a269e001242ab48\",\n                \"playedDuration\": 15,\n                \"visitTime\": \"Thu May 05 2022 20:40:55 GMT+0000 (Coordinated Universal Time)\",\n                \"_id\": \"627436574f3681ad297984d6\"\n            }\n        ],\n        \"actions\": [],\n        \"playlists\": [\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627412ffec8e5c3e922bf30c\",\n                \"_id\": \"62741300ec8e5c3e922bf30e\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627431e0af1f4cbc43ae0be2\",\n                \"_id\": \"627431e0af1f4cbc43ae0be4\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"6274368c4f3681ad2979857b\",\n                \"_id\": \"6274368c4f3681ad2979857d\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"62743a1f90631c28ecabe36e\",\n                \"_id\": \"62743a1f90631c28ecabe370\"\n            },\n            {\n                \"owner\": \"62740508fbe4312f9fded535\",\n                \"playlistId\": \"627492dec53d6dc17719835e\",\n                \"_id\": \"627492dec53d6dc177198360\"\n            }\n        ],\n        \"createdAt\": \"2022-05-05T17:10:33.241Z\",\n        \"updatedAt\": \"2022-05-11T21:15:29.959Z\",\n        \"__v\": 33,\n        \"isPublicUserEnabled\": true\n    }\n}"
+						},
+						{
+							"id": "7e21fd02-1101-4865-af79-66dd20e15a06",
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"firstName\": \"\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:17:34 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "6e20eccf-af57-42ad-a70d-0a7ada451be8"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "115"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-stWEFVIAMFxew="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"73-BEmg2lAZd282rWKg0lGP8v+c6Lk\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c27ee-34d576495e0278f3782d5625;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "BlPwlk34r3EbFjEtllw7UtnIjg8Mjm57XfOPlHAZrJ6YlKdR5yYcKQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"firstName\\\" is not allowed to be empty\"\n}"
+						},
+						{
+							"id": "f590fe74-9a65-49f5-a90c-3dd7cf701f6b",
+							"name": "Forbidden Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{InvalidToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmay\"\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:19:02 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "d4760ec3-a722-4a28-ae3b-70c39a8bb142"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "71"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-s7CE4QIAMFwGQ="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"47-5g3X3Zt8eb2beYTRMzdYalrMgzY\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2846-6449e4214d43d440411ed84d;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "MN39kfLmGp5pMmNDot-X17x41aYahbRzv3p4ECyON7MytaByiv_hHA=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Invalid Token\",\n    \"messageCode\": 1102,\n    \"detail\": \"Invalid Token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile wz FN empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad81d34a-06be-420a-9a30-bb623b1608a9",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1f7a9e7d-efdf-4db4-a838-0b704218d809",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"firstName\": \"\"\n    \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5f84e497-619c-41c5-ba67-98be48ebdf59",
+							"name": "Update my Profile wz FN empty",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"firstName\": \"\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:17:34 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "6e20eccf-af57-42ad-a70d-0a7ada451be8"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "115"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-stWEFVIAMFxew="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"73-BEmg2lAZd282rWKg0lGP8v+c6Lk\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c27ee-34d576495e0278f3782d5625;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "BlPwlk34r3EbFjEtllw7UtnIjg8Mjm57XfOPlHAZrJ6YlKdR5yYcKQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"firstName\\\" is not allowed to be empty\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile ( empty Token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "c99c50e7-b9b9-4408-b82e-9c11f62659b9"
+							}
+						}
+					],
+					"id": "2b6c6a14-e1d7-48fb-921e-f138d94a6a26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmay\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d0859335-1714-4fef-b886-99c8eb12afb7",
+							"name": "Update my Profile ( empty Token)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmay\"\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:17:51 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "3d205e30-0fb9-4fc6-9cb1-39a9b1b6a38e"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "76"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-swAHHFIAMFs6g="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c-ZsWzJZLCrwCnFCKZZFyT+meSDqU\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c27ff-5c7c91351c23b29535dd0773;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "wE6Y0k0xYHncwys5q-Brr44NJ8QFbM37qIMiuPxCjW5unHA3vxdy_g=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Access Denied\",\n    \"messageCode\": 1101,\n    \"detail\": \"No token provided.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile (invalid Token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4601e6d-77de-4a01-8255-c29750ae19ca",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f8a8858b-0a73-47c2-9ee6-b077dca7c2f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{InvalidToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmay\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "299eecf4-55f0-4e6d-9bcd-be7b4df34cb1",
+							"name": "Update my Profile (invalid Token)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{InvalidToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Awet\",\n    \"middleName\": \"Aron\",\n    \"lastName\": \"Ghirmay\"\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:19:02 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "d4760ec3-a722-4a28-ae3b-70c39a8bb142"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "71"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-s7CE4QIAMFwGQ="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"47-5g3X3Zt8eb2beYTRMzdYalrMgzY\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2846-6449e4214d43d440411ed84d;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "MN39kfLmGp5pMmNDot-X17x41aYahbRzv3p4ECyON7MytaByiv_hHA=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Invalid Token\",\n    \"messageCode\": 1102,\n    \"detail\": \"Invalid Token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile wz DOB empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79e58079-f5fb-4125-a749-352882eaeafc",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "989b75ad-ce1b-4a1c-a771-0569540c1eaf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"dob\": \"\"\n    \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "dd5ac287-bc5e-4d22-8ec6-5847f3264d13",
+							"name": "Update my Profile wz DOB empty",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"dob\": \"\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:20:38 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "2dd14b8b-f722-4819-8f4b-70184f48e875"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "114"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-tKDEPLIAMFhxA="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"72-AFjeAdAD9C75qUd3q+XJU38OTuo\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c28a6-1b3243a24bccbc3233ff0f04;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "vE_RLbPYs9IfvOTz5hO7ztbfJMdZSw8shWAb3_JoEX40VNBGVuKihQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"dob\\\" must be in ISO 8601 date format\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Profile wz Gender Empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5aa5d42-0a28-441e-9d5b-4926c070ca03",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b9207a6d-ffaa-4665-ac08-f7297e643849",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"gender\": \"\"\n    \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "bad836d8-0b3a-4afe-80fa-034a944135b2",
+							"name": "Update my Profile wz Gender Empty",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"gender\": \"\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:19:46 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "7ee27bc4-1bbb-4191-90f7-4b85677f5c9f"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "115"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-tB6EFKIAMFzOw="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"73-jXdSv6PHyQcFOTulJYChpA6i3Lg\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c2872-686c4b5a24dec2d06bd58a2b;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "ZH9bsyaZh0jRV5ys3ezURziDtUfkVpSicCK5A6DSVy_vMhfvUFuokQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"gender\\\" must be one of [male, female]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update my Pro LN Empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0366c9c-6907-4bbf-b0bc-6a30b198af5c",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7bed60e0-9363-4ce9-b406-aa26bd5e0bf0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) User",
+								"key": "x-auth-token",
+								"value": "{{tokenPU}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"lastName\": \"\"\n    \n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9e6412b1-c362-4e81-9c2c-b291e29b4b56",
+							"name": "Update my Pro LN Empty",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) User",
+										"key": "x-auth-token",
+										"value": "{{tokenPU}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"lastName\": \"\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 May 2022 21:21:03 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "ac32bbd7-f939-4bd1-ae46-87e5116525df"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, x-device-id"
+								},
+								{
+									"key": "x-amzn-Remapped-content-length",
+									"value": "114"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "R-tN9HRTIAMF8Pw="
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"72-KPWVRylreaduKP6y0hA4nexZUFE\""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "PUT,GET,POST,DELETE"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "x-auth-token,x-refresh-token,x-info-token"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-627c28bf-36d7ad356e68785067eedd0a;Sampled=0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 1cfb3433a86e7969c88f0dfbfd15af32.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "CDG52-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "OElJVsHD8dOCMw6n9qb_vAm4KyEhCedg2GvczLEiYkzp93UJPOeEMQ=="
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Update validation failed error.\",\n    \"messageCode\": 106,\n    \"detail\": \"\\\"lastName\\\" is not allowed to be empty\"\n}"
+						}
+					]
+				}
+			],
+			"id": "ff4bdf1b-a8ce-45e7-982d-09afa357c9ad",
+			"description": "# Account Login\n\n> **This Route is for account login and profile access. There are different check up and scenarios. The following test are being done here:**\n\n*   **Successful Login of account**\n*   **Proper view of Account Profile**\n    *   View Profile with Invalid Token\n    *   View Profile with Empty Token\n*   **Update Account Profile**\n    *   Trying to update profile with empty FirstName\n    *   Trying to update profile with empty LastName\n    *   Trying to update profile with empty Date of Birth\n    *   Trying to update profile with empty Gender\n    *   Trying to update profile with empty Token\n    *   Trying to update profile with invalid Token"
+		}
+	]
+}
